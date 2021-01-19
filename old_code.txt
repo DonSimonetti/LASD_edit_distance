@@ -1,0 +1,64 @@
+def old_ngram_test(ngram_size):
+    print("Inizio test n-grammi")
+
+    # generazione vettore delle grandezze dei vari insiemi di query
+    grandezze_array = list(range(1, 9))
+    for i in range(grandezze_array.__len__()):
+        grandezze_array[i] = pow(2, grandezze_array[i])
+
+    # estrazione di alcune parole
+    for size in grandezze_array:
+        print("Query di", size, "parole")
+        start = time.time()
+        query_Q = extractWordsFromLexica(size, lessico_L)
+
+        # distorsione del 40% delle parole estratte, per simulare le parole assenti dall'insieme
+        indexes = random.sample(range(0, query_Q.__len__()), k=round(query_Q.__len__() * 0.4))
+        for index in indexes:
+            query_Q[index] = shuffleWord(query_Q[index])
+
+        # print(query_Q)
+
+        # confronti
+        for parola in query_Q:
+            # print("Query Q: "+parola)
+            ngram_set1 = nGram.nGramSet(parola, ngram_size)
+
+            for vocabolo in lessico_L:
+                ngram_set2 = nGram.nGramSet(vocabolo, ngram_size)
+                jaccard = nGram.jaccard_coeff(ngram_set1, ngram_set2)
+
+                if jaccard > 0.8:
+                    ngram_test_results.append((vocabolo, jaccard))
+        print("Eseguita in", time.time() - start, "secondi")
+    return
+
+
+def old_edit_distance_test():
+    print("Inizio test Edit-Distance")
+
+    # generazione vettore delle grandezze dei vari insiemi di query
+    grandezze_array = list(range(1, 9))
+    for i in range(grandezze_array.__len__()):
+        grandezze_array[i] = pow(2, grandezze_array[i])
+
+    # estrazione di alcune parole
+    for size in grandezze_array:
+        print("Query di", size, "parole")
+        query_Q = extractWordsFromLexica(size, lessico_L)
+
+        # distorsione del 40% delle parole estratte, per simulare le parole assenti dall'insieme
+        indexes = random.sample(range(0, query_Q.__len__()), k=round(query_Q.__len__() * 0.4))
+        for index in indexes:
+            query_Q[index] = shuffleWord(query_Q[index])
+
+        # print(query_Q)
+
+        # confronti
+        for parola in query_Q:
+            for vocabolo in lessico_L:
+                distance = editDistance.editDistance(parola, vocabolo)
+                if distance == 0:
+                    # print(parola, vocabolo)
+                    edit_distance_test_results.append((parola, vocabolo))
+    return
