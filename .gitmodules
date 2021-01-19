@@ -1,0 +1,3 @@
+[submodule "paroleitaliane"]
+	path = paroleitaliane
+	url = https://github.com/napolux/paroleitaliane
