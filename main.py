@@ -7,18 +7,18 @@ import random
 from memory_usage_thread import MemoryUsageThread
 
 lexica = [
-    "paroleitaliane/1000_parole_italiane_comuni.txt",
-    "paroleitaliane/400_parole_composte.txt",
-    "paroleitaliane/9000_nomi_propri.txt",
-    "paroleitaliane/lista_badwords.txt",
-    "paroleitaliane/110000_parole_italiane_con_nomi_propri.txt",
-    "paroleitaliane/60000_parole_italiane.txt",
-    "paroleitaliane/95000_parole_italiane_con_nomi_propri.txt",
-    "paroleitaliane/lista_cognomi.txt",
-    "paroleitaliane/280000_parole_italiane.txt",
-    "paroleitaliane/660000_parole_italiane.txt",
-    "paroleitaliane/lista_38000_cognomi.txt",
-    "paroleitaliane/parole_uniche.txt"
+    "paroleitaliane/paroleitaliane/1000_parole_italiane_comuni.txt",
+    "paroleitaliane/paroleitaliane/400_parole_composte.txt",
+    "paroleitaliane/paroleitaliane/9000_nomi_propri.txt",
+    "paroleitaliane/paroleitaliane/lista_badwords.txt",
+    "paroleitaliane/paroleitaliane/110000_parole_italiane_con_nomi_propri.txt",
+    "paroleitaliane/paroleitaliane/60000_parole_italiane.txt",
+    "paroleitaliane/paroleitaliane/95000_parole_italiane_con_nomi_propri.txt",
+    "paroleitaliane/paroleitaliane/lista_cognomi.txt",
+    "paroleitaliane/paroleitaliane/280000_parole_italiane.txt",
+    "paroleitaliane/paroleitaliane/660000_parole_italiane.txt",
+    "paroleitaliane/paroleitaliane/lista_38000_cognomi.txt",
+    "paroleitaliane/paroleitaliane/parole_uniche.txt"
 ]
 
 lessico_L = []
